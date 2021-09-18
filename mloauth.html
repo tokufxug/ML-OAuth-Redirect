@@ -7,7 +7,7 @@
     <script type="text/javascript">
         function onRedirectOAuth()
         {
-            var val = "redirecturi://";
+            var val = "redirecturi://" + location.search;
             location.href = val;
         }
     </script>
