@@ -7,7 +7,9 @@
     <script type="text/javascript">
         function onRedirectOAuth()
         {
-            var val = "redirecturi://" + location.searchParams('code');
+            var params = new URLSearchParams(window.location.search);
+            var val = "redirecturi://" + params.get('code');
+            console.log(val);
             location.href = val;
         }
     </script>
