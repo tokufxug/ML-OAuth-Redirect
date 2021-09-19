@@ -9,13 +9,12 @@
         {
             var params = new URLSearchParams(window.location.search);
             var val = "redirecturi://" + params.get('code');
-            console.log(val);
             location.href = val;
         }
     </script>
     <body>
         <center>
-            <a href="#" onclick="onRedirectOAuth();">REDIRECT</a>
+            <a href="#" onclick="onRedirectOAuth();">Magic Leap OAuth2 REDIRECT</a>
         </center>
     </body>
 </html>
