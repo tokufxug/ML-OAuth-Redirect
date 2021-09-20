@@ -8,7 +8,16 @@
         function onRedirectOAuth()
         {
             var params = new URLSearchParams(window.location.search);
-            var val = 'redirecturi://{"code" : "' + params.get('code') + '", "scope" : "' +  params.get('scope') + '"}';
+            var val = '';
+            
+            if (params.get('state'))
+            {
+                val = 'redirecturi://{"code" : "' + params.get('code') + '", "scope" : "' +  params.get('scope') + '", "state" : "' +  params.get('state') + '"}'; 
+            }
+            else
+            {
+                val = 'redirecturi://{"code" : "' + params.get('code') + '", "scope" : "' +  params.get('scope') + '"}';
+            }
             console.log(val);
             location.href = val;
         }
