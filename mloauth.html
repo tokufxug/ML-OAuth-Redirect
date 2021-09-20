@@ -2,19 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>OAuth Sample</title>
+        <title>Magic Leap 1 OAuth Sample</title>
     </head>
     <script type="text/javascript">
         function onRedirectOAuth()
         {
             var params = new URLSearchParams(window.location.search);
-            var val = "redirecturi://" + params.get('code');
+            var val = 'redirecturi://{"code" : "' + params.get('code') + '", "scope" : "' +  param.get('scope') + '"}';
+            console.log(val);
             location.href = val;
         }
     </script>
     <body>
         <center>
-            <a href="#" onclick="onRedirectOAuth();">Magic Leap OAuth2 REDIRECT</a>
+            <a href="#" onclick="onRedirectOAuth();">Return to the application</a>
         </center>
     </body>
 </html>
